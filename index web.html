@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STATDATA — Jasa Olah & Analisis Data Statistik</title>
+  <meta name="description" content="Jasa pengolahan dan analisis data statistik profesional menggunakan Minitab, SPSS, dan Microsoft Excel." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#eff6ff",
+              100: "#dbeafe",
+              200: "#bfdbfe",
+              300: "#93c5fd",
+              400: "#60a5fa",
+              500: "#3b82f6",
+              600: "#2563eb",
+              700: "#1d4ed8",
+              800: "#1e40af",
+              900: "#1e3a8a"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(37, 99, 235, 0.12)"
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f8fafc; }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="grid h-11 w-11 place-items-center rounded-2xl bg-brand-600 text-white shadow-soft">
+          <span class="text-lg font-bold">S</span>
+        </div>
+        <div>
+          <p class="text-sm font-semibold tracking-wide text-brand-700">STATDATA</p>
+          <p class="text-xs text-slate-500">Statistik Analysis Service</p>
+        </div>
+      </a>
+
+      <nav class="hidden items-center gap-6 lg:flex">
+        <a href="#hero" class="text-sm font-medium text-slate-600 hover:text-brand-700">Beranda</a>
+        <a href="#services" class="text-sm font-medium text-slate-600 hover:text-brand-700">Daftar Uji</a>
+        <a href="#packages" class="text-sm font-medium text-slate-600 hover:text-brand-700">Paket Layanan</a>
+        <a href="#custom" class="text-sm font-medium text-slate-600 hover:text-brand-700">Request Tambahan</a>
+        <a href="#testimonials" class="text-sm font-medium text-slate-600 hover:text-brand-700">Testimoni</a>
+      </nav>
+
+      <div class="hidden items-center gap-3 lg:flex">
+        <a href="#custom" class="rounded-full border border-brand-200 px-4 py-2 text-sm font-semibold text-brand-700 hover:bg-brand-50">
+          Konsultasi Gratis
+        </a>
+        <a id="waTop" href="#" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-brand-700">
+          WhatsApp
+        </a>
+      </div>
+
+      <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 lg:hidden" aria-label="Buka menu">
+        ☰
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 py-4 lg:hidden">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3">
+        <a href="#hero" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Beranda</a>
+        <a href="#services" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Daftar Uji</a>
+        <a href="#packages" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Paket Layanan</a>
+        <a href="#custom" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Request Tambahan</a>
+        <a href="#testimonials" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Testimoni</a>
+        <a id="waMobile" href="#" target="_blank" rel="noreferrer" class="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white">
+          Konsultasi Gratis via WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.12),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(148,163,184,0.16),_transparent_30%)]"></div>
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
+      <div class="relative z-10">
+        <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-medium text-brand-700 shadow-sm">
+          Fokus pada Minitab, SPSS, dan Microsoft Excel
+        </div>
+
+        <h1 class="max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          Solusi cepat, akurat, dan terpercaya untuk olah data riset Anda.
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+          Membantu mahasiswa, akademisi, peneliti, dan instansi dalam pengolahan serta analisis data statistik secara rapi, akademis, dan mudah dipahami.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a id="waHero" href="#" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-soft hover:bg-brand-700">
+            Konsultasi via WhatsApp
+          </a>
+          <a href="#packages" class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 hover:border-brand-300 hover:text-brand-700">
+            Lihat Paket Layanan →
+          </a>
+        </div>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p class="text-sm font-semibold text-slate-900">Rapi & akademis</p>
+            <p class="mt-1 text-sm text-slate-600">Output siap dipakai untuk skripsi, tesis, atau laporan.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p class="text-sm font-semibold text-slate-900">Cepat tanggap</p>
+            <p class="mt-1 text-sm text-slate-600">Respon konsultasi jelas dan tidak bertele-tele.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p class="text-sm font-semibold text-slate-900">Fleksibel</p>
+            <p class="mt-1 text-sm text-slate-600">Bisa disesuaikan dengan kebutuhan metode penelitian.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative z-10">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-sm font-semibold text-brand-700">Preview Layanan</p>
+              <h2 class="mt-2 text-2xl font-bold text-slate-900">Analisis data yang terstruktur dan mudah dibaca.</h2>
+            </div>
+            <div class="rounded-2xl bg-brand-50 px-3 py-2 text-brand-700">◎</div>
+          </div>
+
+          <div class="mt-6 space-y-4">
+            <div class="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-3">
+              <div class="grid h-6 w-6 place-items-center rounded-full bg-brand-600 text-xs font-bold text-white">✓</div>
+              <p class="text-sm font-medium text-slate-700">Statistik deskriptif & uji instrumen</p>
+            </div>
+            <div class="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-3">
+              <div class="grid h-6 w-6 place-items-center rounded-full bg-brand-600 text-xs font-bold text-white">✓</div>
+              <p class="text-sm font-medium text-slate-700">Uji prasyarat & uji pengaruh</p>
+            </div>
+            <div class="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-3">
+              <div class="grid h-6 w-6 place-items-center rounded-full bg-brand-600 text-xs font-bold text-white">✓</div>
+              <p class="text-sm font-medium text-slate-700">Analisis lanjutan sesuai kebutuhan</p>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-5">
+            <p class="text-sm font-semibold text-brand-700">CTA Utama</p>
+            <p class="mt-2 text-sm leading-6 text-slate-600">
+              Kirim pertanyaan Anda, jelaskan kebutuhan analisis, lalu kami bantu arahkan metode yang paling sesuai.
+            </p>
+            <a href="#custom" class="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">
+              Mulai Konsultasi
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition">
+        <div class="inline-flex rounded-2xl bg-brand-50 p-3 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white">★</div>
+        <h3 class="mt-4 text-xl font-bold text-slate-900">Pengerjaan Cepat & Tepat</h3>
+        <p class="mt-2 text-sm leading-6 text-slate-600">Alur kerja efisien tanpa mengorbankan ketelitian hasil analisis.</p>
+      </div>
+      <div class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition">
+        <div class="inline-flex rounded-2xl bg-brand-50 p-3 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white">✦</div>
+        <h3 class="mt-4 text-xl font-bold text-slate-900">Interpretasi Mudah Dipahami</h3>
+        <p class="mt-2 text-sm leading-6 text-slate-600">Hasil analisis dijelaskan dengan bahasa akademik yang tetap sederhana.</p>
+      </div>
+      <div class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition">
+        <div class="inline-flex rounded-2xl bg-brand-50 p-3 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white">✔</div>
+        <h3 class="mt-4 text-xl font-bold text-slate-900">Jaminan Revisi</h3>
+        <p class="mt-2 text-sm leading-6 text-slate-600">Revisi tersedia agar hasil akhir tetap selaras dengan kebutuhan Anda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-2 text-sm font-semibold text-brand-700">
+          Daftar Layanan Uji Statistik
+        </div>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          Pilihan layanan yang lengkap, rapi, dan mudah dinavigasi.
+        </h2>
+        <p class="mt-3 max-w-3xl text-slate-600">
+          Bagian ini dibuat menonjol agar calon klien cepat menemukan jenis analisis yang dibutuhkan, baik untuk kebutuhan dasar maupun lanjutan.
+        </p>
+      </div>
+      <a href="#custom" class="inline-flex w-fit items-center gap-2 rounded-full border border-brand-200 bg-white px-5 py-3 text-sm font-semibold text-brand-700 shadow-sm hover:bg-brand-50">
+        Butuh metode lain? Diskusikan →
+      </a>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="text-lg font-bold text-slate-900">Statistik Deskriptif</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Ringkasan data yang rapi, akurat, dan mudah dipahami untuk mendukung pembacaan awal penelitian.</p>
+        <div class="mt-5 flex items-center gap-2 text-sm font-medium text-brand-700">✓ Tersedia interpretasi hasil</div>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="text-lg font-bold text-slate-900">Uji Kualitas Instrumen</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Validitas dan reliabilitas untuk memastikan instrumen penelitian layak digunakan.</p>
+        <div class="mt-5 flex items-center gap-2 text-sm font-medium text-brand-700">✓ Tersedia interpretasi hasil</div>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="text-lg font-bold text-slate-900">Uji Prasyarat</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Pemeriksaan asumsi awal agar analisis lanjutan lebih kuat dan dapat dipertanggungjawabkan.</p>
+        <div class="mt-5 flex items-center gap-2 text-sm font-medium text-brand-700">✓ Tersedia interpretasi hasil</div>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="text-lg font-bold text-slate-900">Uji Analisis</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Korelasi, T-Test / ANOVA, dan Chi-Square dengan hasil yang jelas serta interpretasi ringkas.</p>
+        <div class="mt-5 flex items-center gap-2 text-sm font-medium text-brand-700">✓ Tersedia interpretasi hasil</div>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="text-lg font-bold text-slate-900">Uji Pengaruh</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Regresi sederhana dan regresi berganda untuk melihat pengaruh antar variabel secara terstruktur.</p>
+        <div class="mt-5 flex items-center gap-2 text-sm font-medium text-brand-700">✓ Tersedia interpretasi hasil</div>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="text-lg font-bold text-slate-900">Uji Asumsi Klasik</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Multikolinearitas, heteroskedastisitas, autokorelasi, dan normalitas residual.</p>
+        <div class="mt-5 flex items-center gap-2 text-sm font-medium text-brand-700">✓ Tersedia interpretasi hasil</div>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg xl:col-span-3">
+        <h3 class="text-lg font-bold text-slate-900">Analisis Lanjutan</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Analisis faktor, cluster, dan SEM untuk kebutuhan penelitian yang lebih kompleks.</p>
+        <div class="mt-5 flex items-center gap-2 text-sm font-medium text-brand-700">✓ Tersedia interpretasi hasil</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section id="packages" class="bg-white py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-2 text-sm font-semibold text-brand-700">
+            Paket Layanan
+          </div>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Paket yang jelas, terstruktur, dan mudah Anda sesuaikan.
+          </h2>
+          <p class="mt-3 max-w-3xl text-slate-600">
+            Harga tidak ditampilkan di sini sesuai permintaan Anda. Silakan isi placeholder <span class="font-semibold text-slate-900">[Masukkan Harga]</span> sesuai kebutuhan bisnis Anda.
+          </p>
+        </div>
+
+        <div class="inline-flex rounded-2xl border border-slate-200 bg-slate-50 p-1">
+          <button class="pkgBtn rounded-xl px-4 py-2 text-sm font-semibold bg-brand-600 text-white shadow" data-pkg="Paket Basic">Basic</button>
+          <button class="pkgBtn rounded-xl px-4 py-2 text-sm font-semibold text-slate-600 hover:text-brand-700" data-pkg="Paket Standard">Standard</button>
+          <button class="pkgBtn rounded-xl px-4 py-2 text-sm font-semibold text-slate-600 hover:text-brand-700" data-pkg="Paket Premium">Premium</button>
+        </div>
+      </div>
+
+      <div class="grid gap-5 lg:grid-cols-[1fr_1.2fr]">
+        <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+          <p class="text-sm font-semibold text-brand-700">Paket Terpilih</p>
+          <h3 id="pkgTitle" class="mt-2 text-2xl font-bold text-slate-900">Paket Basic</h3>
+          <p id="pkgAccent" class="mt-2 text-sm text-slate-600">Cocok untuk kebutuhan awal penelitian</p>
+
+          <div id="pkgItems" class="mt-6 space-y-3"></div>
+
+          <div class="mt-6 rounded-2xl border border-dashed border-brand-200 bg-brand-50 p-4">
+            <p class="text-sm font-semibold text-brand-700">Placeholder Harga</p>
+            <p class="mt-2 text-sm text-slate-600">[Masukkan Harga]</p>
+          </div>
+        </div>
+
+        <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-slate-200 text-left">
+              <thead class="bg-slate-50">
+                <tr>
+                  <th class="px-6 py-4 text-sm font-semibold text-slate-700">Paket</th>
+                  <th class="px-6 py-4 text-sm font-semibold text-slate-700">Cocok untuk</th>
+                  <th class="px-6 py-4 text-sm font-semibold text-slate-700">Isi Paket</th>
+                  <th class="px-6 py-4 text-sm font-semibold text-slate-700">Harga</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Paket Basic</td>
+                  <td class="px-6 py-5 text-sm text-slate-600">Kebutuhan awal penelitian</td>
+                  <td class="px-6 py-5 text-sm text-slate-600">Deskriptif, validitas, reliabilitas</td>
+                  <td class="px-6 py-5 text-sm font-semibold text-brand-700">[Masukkan Harga]</td>
+                </tr>
+                <tr class="bg-brand-50/40">
+                  <td class="px-6 py-5 font-semibold text-slate-900">Paket Standard</td>
+                  <td class="px-6 py-5 text-sm text-slate-600">Skripsi / tesis</td>
+                  <td class="px-6 py-5 text-sm text-slate-600">Prasyarat, korelasi, T-Test / ANOVA / Chi-Square</td>
+                  <td class="px-6 py-5 text-sm font-semibold text-brand-700">[Masukkan Harga]</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Paket Premium</td>
+                  <td class="px-6 py-5 text-sm text-slate-600">Riset kompleks</td>
+                  <td class="px-6 py-5 text-sm text-slate-600">Regresi, asumsi klasik, SEM, analisis lanjutan</td>
+                  <td class="px-6 py-5 text-sm font-semibold text-brand-700">[Masukkan Harga]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Request -->
+  <section id="custom" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <div class="rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-600 to-brand-700 p-8 text-white shadow-xl shadow-brand-600/20">
+        <div class="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white">
+          Request Tambahan
+        </div>
+        <h2 class="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
+          Butuh Analisis Spesifik?
+        </h2>
+        <p class="mt-4 max-w-2xl leading-7 text-white/90">
+          Cocok untuk klien yang membutuhkan metode uji lain, pengolahan data mentah, atau kombinasi uji yang belum tercantum dalam paket standar. Kami bantu menyesuaikan solusi sesuai kebutuhan riset Anda.
+        </p>
+
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <div class="rounded-2xl bg-white/10 px-4 py-3 text-sm text-white/95">Metode uji di luar paket standar</div>
+          <div class="rounded-2xl bg-white/10 px-4 py-3 text-sm text-white/95">Pengolahan data mentah dari nol</div>
+          <div class="rounded-2xl bg-white/10 px-4 py-3 text-sm text-white/95">Kombinasi uji yang lebih kompleks</div>
+          <div class="rounded-2xl bg-white/10 px-4 py-3 text-sm text-white/95">Pendampingan kebutuhan khusus instansi</div>
+        </div>
+
+        <a id="waCustom" href="#" target="_blank" rel="noreferrer" class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand-700 hover:bg-brand-50">
+          Diskusikan Kebutuhan Anda →
+        </a>
+      </div>
+
+      <form id="customForm" class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div class="rounded-2xl bg-brand-50 px-3 py-2 text-brand-700">✉</div>
+          <div>
+            <h3 class="text-2xl font-bold text-slate-900">Form Diskusi Singkat</h3>
+            <p class="mt-1 text-sm text-slate-600">Isi kebutuhan Anda, lalu klik tombol untuk lanjut ke WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-4">
+          <input id="nama" type="text" placeholder="Nama Anda" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+          <input id="whatsapp" type="text" placeholder="Nomor WhatsApp" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+          <input id="metode" type="text" placeholder="Metode / uji yang dibutuhkan" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+          <textarea id="kebutuhan" rows="5" placeholder="Jelaskan singkat data, tujuan analisis, dan output yang diharapkan" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100"></textarea>
+
+          <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white hover:bg-brand-700">
+            Diskusikan Kebutuhan Anda
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 text-center">
+        <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-2 text-sm font-semibold text-brand-700">
+          Proses Kerja
+        </div>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          Alur kerja yang singkat, jelas, dan mudah diikuti.
+        </h2>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-4">
+        <div class="relative rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-lg font-bold text-white shadow-soft">1</div>
+          <h3 class="text-lg font-bold text-slate-900">Konsultasi</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Anda menyampaikan kebutuhan penelitian, metode, dan target hasil yang diinginkan.</p>
+        </div>
+        <div class="relative rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-lg font-bold text-white shadow-soft">2</div>
+          <h3 class="text-lg font-bold text-slate-900">Pengiriman Data</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Data mentah, template, atau file rekap dikirimkan melalui kanal yang disepakati.</p>
+        </div>
+        <div class="relative rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-lg font-bold text-white shadow-soft">3</div>
+          <h3 class="text-lg font-bold text-slate-900">Analisis</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Proses pengolahan dilakukan menggunakan Minitab, SPSS, atau Microsoft Excel.</p>
+        </div>
+        <div class="relative rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-lg font-bold text-white shadow-soft">4</div>
+          <h3 class="text-lg font-bold text-slate-900">Penyerahan Hasil & Interpretasi</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Hasil disusun rapi, disertai penjelasan yang mudah dipahami dan siap digunakan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-2 text-sm font-semibold text-brand-700">
+        Testimoni
+      </div>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        Bagian yang membangun rasa percaya.
+      </h2>
+      <p class="mt-3 max-w-3xl text-slate-600">
+        Silakan isi dengan testimoni asli klien agar halaman terlihat kredibel dan meyakinkan.
+      </p>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      <figure class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="mb-4 flex gap-1 text-brand-600">★★★★★</div>
+        <blockquote class="text-sm leading-7 text-slate-700">“Penjelasannya rapi dan mudah dipahami untuk kebutuhan skripsi saya.”</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold text-slate-900">Nama Klien / Institusi</figcaption>
+      </figure>
+      <figure class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="mb-4 flex gap-1 text-brand-600">★★★★★</div>
+        <blockquote class="text-sm leading-7 text-slate-700">“Respon cepat, hasil analisis jelas, dan revisinya juga responsif.”</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold text-slate-900">Nama Klien / Institusi</figcaption>
+      </figure>
+      <figure class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="mb-4 flex gap-1 text-brand-600">★★★★★</div>
+        <blockquote class="text-sm leading-7 text-slate-700">“Cocok untuk kebutuhan riset karena komunikasinya profesional dan to the point.”</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold text-slate-900">Nama Klien / Institusi</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-slate-900 text-slate-300">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div>
+        <div class="flex items-center gap-3 text-white">
+          <div class="grid h-11 w-11 place-items-center rounded-2xl bg-brand-600">
+            <span class="text-lg font-bold">S</span>
+          </div>
+          <div>
+            <p class="font-semibold tracking-wide">STATDATA</p>
+            <p class="text-xs text-slate-400">Jasa olah data statistik</p>
+          </div>
+        </div>
+        <p class="mt-4 max-w-sm text-sm leading-6 text-slate-400">
+          Layanan pengolahan dan analisis data statistik berbasis Minitab, SPSS, dan Microsoft Excel untuk kebutuhan akademik maupun profesional.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Navigasi</h4>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li><a href="#hero" class="hover:text-white">Beranda</a></li>
+          <li><a href="#services" class="hover:text-white">Daftar Uji</a></li>
+          <li><a href="#packages" class="hover:text-white">Paket</a></li>
+          <li><a href="#custom" class="hover:text-white">Request Tambahan</a></li>
+          <li><a href="#testimonials" class="hover:text-white">Testimoni</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Kontak</h4>
+        <div class="mt-4 space-y-3 text-sm text-slate-400">
+          <p>WhatsApp: <span class="text-white">+62 812-3456-7890</span></p>
+          <p>Email: <span class="text-white">halo@domainanda.com</span></p>
+          <p>Jam Operasional: <span class="text-white">Senin–Sabtu, 09.00–17.00</span></p>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Aksi Cepat</h4>
+        <p class="mt-4 text-sm leading-6 text-slate-400">
+          Gunakan tombol di bawah untuk konsultasi awal tanpa biaya.
+        </p>
+        <a id="waFooter" href="#" target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">
+          Konsultasi Gratis
+        </a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 py-5">
+      <p class="text-center text-xs text-slate-500">
+        © 2026 STATDATA. Seluruh hak cipta dilindungi.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a id="waFloat" href="#" target="_blank" rel="noreferrer" class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-xl shadow-emerald-600/30 hover:bg-emerald-700">
+    WhatsApp
+  </a>
+
+  <script>
+    const whatsappNumber = "6281234567890";
+    const defaultMessage = encodeURIComponent("Halo, saya ingin konsultasi gratis untuk olah dan analisis data statistik.");
+    const waLink = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
+
+    document.getElementById("waTop").href = waLink;
+    document.getElementById("waHero").href = waLink;
+    document.getElementById("waMobile").href = waLink;
+    document.getElementById("waFooter").href = waLink;
+    document.getElementById("waFloat").href = waLink;
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    const packageData = {
+      "Paket Basic": {
+        accent: "Cocok untuk kebutuhan awal penelitian",
+        items: [
+          "Statistik deskriptif",
+          "Uji validitas & reliabilitas",
+          "1 uji analisis dasar",
+          "Interpretasi singkat"
+        ]
+      },
+      "Paket Standard": {
+        accent: "Pilihan paling populer untuk skripsi/tesis",
+        items: [
+          "Statistik deskriptif",
+          "Uji prasyarat",
+          "Uji korelasi / T-Test / ANOVA / Chi-Square",
+          "Interpretasi hasil lengkap",
+          "Revisi hasil analisis"
+        ]
+      },
+      "Paket Premium": {
+        accent: "Untuk riset yang lebih kompleks dan mendalam",
+        items: [
+          "Seluruh uji dalam paket sebelumnya",
+          "Regresi sederhana / berganda",
+          "Uji asumsi klasik",
+          "Analisis lanjutan (faktor / cluster / SEM)",
+          "Pendampingan custom sesuai kebutuhan"
+        ]
+      }
+    };
+
+    const pkgTitle = document.getElementById("pkgTitle");
+    const pkgAccent = document.getElementById("pkgAccent");
+    const pkgItems = document.getElementById("pkgItems");
+    const pkgButtons = document.querySelectorAll(".pkgBtn");
+
+    function renderPackage(name) {
+      const data = packageData[name];
+      pkgTitle.textContent = name;
+      pkgAccent.textContent = data.accent;
+      pkgItems.innerHTML = data.items.map(item => `
+        <div class="flex items-center gap-3 rounded-2xl bg-white px-4 py-3">
+          <div class="grid h-5 w-5 place-items-center rounded-full bg-brand-600 text-[10px] font-bold text-white">✓</div>
+          <p class="text-sm font-medium text-slate-700">${item}</p>
+        </div>
+      `).join("");
+
+      pkgButtons.forEach(btn => {
+        if (btn.dataset.pkg === name) {
+          btn.className = "pkgBtn rounded-xl px-4 py-2 text-sm font-semibold bg-brand-600 text-white shadow";
+        } else {
+          btn.className = "pkgBtn rounded-xl px-4 py-2 text-sm font-semibold text-slate-600 hover:text-brand-700";
+        }
+      });
+    }
+
+    pkgButtons.forEach(btn => {
+      btn.addEventListener("click", () => renderPackage(btn.dataset.pkg));
+    });
+
+    renderPackage("Paket Basic");
+
+    const customForm = document.getElementById("customForm");
+    customForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value.trim();
+      const whatsapp = document.getElementById("whatsapp").value.trim();
+      const metode = document.getElementById("metode").value.trim();
+      const kebutuhan = document.getElementById("kebutuhan").value.trim();
+
+      const message = encodeURIComponent(
+        `Halo, saya ${nama || ""}. Saya ingin diskusi kebutuhan analisis spesifik.\n\nWhatsApp: ${whatsapp || ""}\nMetode yang dibutuhkan: ${metode || ""}\nKebutuhan: ${kebutuhan || ""}`
+      );
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+    });
+  </script>
+</body>
+</html>
