@@ -1699,6 +1699,18 @@
       el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
       observer.observe(el);
     });
-  </script>
+    
+  <script>
+  const waNumber = "628973746300";
+
+  function makeWaLink(paket) {
+    const text = `Halo kak, saya tertarik dengan DATAKU dan ingin melakukan pemesanan paket ${paket}.`;
+    return `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+  }
+
+  document.getElementById("waBasic").href = makeWaLink("Basic");
+  document.getElementById("waStandard").href = makeWaLink("Standard");
+  document.getElementById("waPremium").href = makeWaLink("Premium");
+</script>
 </body>
 </html>
