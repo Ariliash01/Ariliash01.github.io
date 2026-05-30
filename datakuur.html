@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DATAKU — Jasa Olah & Analisis Data Statistik</title>
+    <meta name="description"
+        content="Jasa pengolahan dan analisis data statistik profesional menggunakan Minitab, SPSS, Excel, R, dan Python." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Geist', 'sans-serif'],
+                    },
+                    colors: {
+                        background: "hsl(260, 87%, 3%)",
+                        foreground: "hsl(40, 6%, 95%)",
+                        primary: "hsl(121, 95%, 76%)",
+                        "primary-fg": "hsl(0, 0%, 5%)",
+                        muted: "hsl(240, 4%, 16%)",
+                        border: "hsl(240, 4%, 20%)",
+                    },
+                    animation: {
+                        'marquee': 'marquee 20s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: hsl(260, 87%, 3%);
+            color: hsl(40, 6%, 95%);
+        }
+
+        /* Utility Class: Liquid Glass */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.02);
+            background-blend-mode: luminosity;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 1.5rem;
+        }
+
+        .liquid-glass-pill {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+        }
+
+        /* Neon Glow Effects */
+        .neon-text {
+            color: hsl(121, 95%, 76%);
+            text-shadow: 0 0 15px rgba(135, 251, 137, 0.4);
+        }
+
+        .neon-border:hover {
+            border-color: hsl(121, 95%, 76%);
+            box-shadow: 0 0 15px rgba(135, 251, 137, 0.2);
+        }
+
+        /* SVG Chart Animations */
+        .chart-line {
+            stroke: hsl(121, 95%, 76%);
+            stroke-width: 3;
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            animation: drawLine 3s ease-out forwards infinite alternate;
+            filter: drop-shadow(0 0 6px hsl(121, 95%, 76%));
+        }
+
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Video Background Overlay */
+        .video-overlay {
+            background: radial-gradient(circle at center, transparent 0%, hsl(260, 87%, 3%) 100%);
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+    <div class="fixed inset-0 -z-50 bg-background overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-primary/10 blur-[150px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-purple-900/20 blur-[150px] rounded-full">
+        </div>
+        <div
+            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]">
+        </div>
+    </div>
+
+    <div class="fixed top-6 left-0 w-full z-50 flex justify-center px-4">
+        <nav class="liquid-glass-pill w-full max-w-[850px] px-2 py-2 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 pl-4">
+                <div
+                    class="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-green-400 text-primary-fg font-bold text-lg">
+                    D
+                </div>
+                <span class="text-lg font-semibold tracking-wide text-foreground">DATAKU</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6 text-sm text-foreground/80">
+                <a href="#services" class="hover:text-primary transition">Daftar Uji</a>
+                <a href="#workflow" class="hover:text-primary transition">Proses</a>
+                <a href="#packages" class="hover:text-primary transition">Paket Layanan</a>
+            </div>
+
+            <a href="#custom"
+                class="bg-primary text-primary-fg px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary/90 transition shadow-[0_0_15px_rgba(135,251,137,0.3)]">
+                Konsultasi
+            </a>
+        </nav>
+    </div>
+
+    <section id="hero"
+        class="relative pt-40 pb-20 flex flex-col items-center text-center px-4 min-h-screen justify-center">
+        <div class="liquid-glass-pill inline-flex items-center gap-3 p-1 pr-4 mb-8">
+            <span class="bg-white/10 px-3 py-1 rounded-full text-xs font-semibold text-white">Update</span>
+            <span class="text-sm text-foreground/90">Layanan Analisis SEM Lanjutan Tersedia!</span>
+            <svg class="w-4 h-4 text-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </div>
+
+        <h1 class="text-5xl sm:text-7xl font-semibold tracking-tight leading-[1.05] max-w-5xl text-foreground">
+            Akselerasi Riset Anda dengan <span class="neon-text">Data Akurat.</span>
+        </h1>
+
+        <p class="mt-6 text-lg max-w-2xl text-foreground/70 leading-relaxed">
+            Membantu akademisi, peneliti, dan instansi dalam pengolahan serta analisis data statistik secara rapi,
+            akademis, dan terstruktur.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/628973746300" target="_blank"
+                class="bg-primary text-primary-fg rounded-full px-8 py-4 text-base font-semibold hover:bg-primary/90 transition shadow-[0_0_20px_rgba(135,251,137,0.4)]">
+                Diskusikan Data Anda
+            </a>
+            <a href="#packages"
+                class="liquid-glass-pill text-foreground rounded-full px-8 py-4 text-base font-medium hover:bg-white/10 transition border border-white/10">
+                Lihat Paket Layanan
+            </a>
+        </div>
+
+        <div class="mt-16 w-full max-w-3xl liquid-glass p-6 hidden md:block">
+            <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
+                <div class="text-left">
+                    <p class="text-xs text-foreground/50 uppercase tracking-widest">Dashboard Preview</p>
+                    <p class="text-lg font-semibold text-white">Regresi & Forecasting</p>
+                </div>
+                <div class="flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                </div>
+            </div>
+            <svg class="w-full h-32" viewBox="0 0 800 120" preserveAspectRatio="none">
+                <line x1="0" y1="30" x2="800" y2="30" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                <line x1="0" y1="60" x2="800" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                <line x1="0" y1="90" x2="800" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                <path class="chart-line" fill="none" d="M0,100 C150,90 250,30 400,50 C550,70 650,20 800,10" />
+                <path fill="url(#gradient)" d="M0,100 C150,90 250,30 400,50 C550,70 650,20 800,10 L800,120 L0,120 Z"
+                    opacity="0.2" />
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="hsl(121, 95%, 76%)" />
+                        <stop offset="100%" stop-color="rgba(135, 251, 137, 0)" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </section>
+
+    <div class="border-y border-white/5 bg-white/[0.01] py-6 flex overflow-hidden relative">
+        <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10"></div>
+
+        <div class="flex w-[200%] animate-marquee items-center">
+            <div
+                class="flex-1 flex justify-around items-center min-w-full text-foreground/40 font-semibold text-lg md:text-xl">
+                <span>Minitab</span>
+                <span>SPSS Statistics</span>
+                <span>Microsoft Excel</span>
+                <span>R Studio</span>
+                <span>Python</span>
+                <span>Power BI</span>
+            </div>
+            <div
+                class="flex-1 flex justify-around items-center min-w-full text-foreground/40 font-semibold text-lg md:text-xl">
+                <span>Minitab</span>
+                <span>SPSS Statistics</span>
+                <span>Microsoft Excel</span>
+                <span>R Studio</span>
+                <span>Python</span>
+                <span>Power BI</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="services" class="max-w-7xl mx-auto px-4 py-24">
+        <div class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground">Keahlian Analisis Kami</h2>
+            <p class="mt-4 text-foreground/60 max-w-2xl">Output siap pakai, terstruktur, dan disajikan dengan bahasa
+                akademik yang mudah diinterpretasikan.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="liquid-glass p-8 neon-border transition-all cursor-default">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white">Statistik Deskriptif</h3>
+                <p class="mt-3 text-sm text-foreground/60 leading-relaxed">Ringkasan data rapi dan akurat untuk membaca
+                    karakteristik awal dari penelitian Anda.</p>
+            </div>
+
+            <div class="liquid-glass p-8 neon-border transition-all cursor-default">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white">Uji Kualitas Instrumen</h3>
+                <p class="mt-3 text-sm text-foreground/60 leading-relaxed">Validitas dan reliabilitas ketat untuk
+                    memastikan kuesioner Anda layak digunakan.</p>
+            </div>
+
+            <div class="liquid-glass p-8 neon-border transition-all cursor-default">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white">Uji Pengaruh & Analisis</h3>
+                <p class="mt-3 text-sm text-foreground/60 leading-relaxed">Regresi, ANOVA, T-Test dengan visualisasi
+                    plot yang jelas dan asumsi klasik yang valid.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="workflow" class="max-w-7xl mx-auto px-4 py-16 border-t border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground">Proses Kerja Cerdas</h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-4 relative">
+            <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -z-10"></div>
+            <div
+                class="hidden md:block absolute top-1/2 left-0 w-1/2 h-[1px] bg-primary shadow-[0_0_10px_#87FB89] -z-10">
+            </div>
+
+            <div class="liquid-glass p-6 text-center group">
+                <div
+                    class="w-10 h-10 mx-auto rounded-full bg-primary text-primary-fg font-bold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(135,251,137,0.5)]">
+                    1</div>
+                <h3 class="text-lg font-bold text-white">Konsultasi</h3>
+                <p class="mt-2 text-sm text-foreground/50">Sampaikan kebutuhan riset dan target analisis.</p>
+            </div>
+
+            <div class="liquid-glass p-6 text-center group">
+                <div
+                    class="w-10 h-10 mx-auto rounded-full bg-primary text-primary-fg font-bold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(135,251,137,0.5)]">
+                    2</div>
+                <h3 class="text-lg font-bold text-white">Kirim Data</h3>
+                <p class="mt-2 text-sm text-foreground/50">Upload data mentah secara aman.</p>
+            </div>
+
+            <div class="liquid-glass p-6 text-center group">
+                <div
+                    class="w-10 h-10 mx-auto rounded-full bg-[#1a1a1e] border border-white/10 text-white font-bold flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-fg transition-colors duration-300">
+                    3</div>
+                <h3 class="text-lg font-bold text-white">Proses Analisis</h3>
+                <p class="mt-2 text-sm text-foreground/50">Pengolahan menggunakan software teruji.</p>
+            </div>
+
+            <div class="liquid-glass p-6 text-center group">
+                <div
+                    class="w-10 h-10 mx-auto rounded-full bg-[#1a1a1e] border border-white/10 text-white font-bold flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-fg transition-colors duration-300">
+                    4</div>
+                <h3 class="text-lg font-bold text-white">Terima Hasil</h3>
+                <p class="mt-2 text-sm text-foreground/50">Laporan komprehensif siap pakai & revisi.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="max-w-7xl mx-auto px-4 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground">Pilih Skala Analisis Anda</h2>
+            <p class="mt-4 text-foreground/60 max-w-xl mx-auto">Kami merancang paket yang transparan untuk kebutuhan
+                Skripsi, Tesis, hingga Riset Korporat.</p>
+        </div>
+
+        <div class="liquid-glass overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-white/10 bg-white/5">
+                            <th class="p-6 text-sm font-semibold text-foreground/80 uppercase tracking-wider">Paket</th>
+                            <th class="p-6 text-sm font-semibold text-foreground/80 uppercase tracking-wider">Peruntukan
+                            </th>
+                            <th class="p-6 text-sm font-semibold text-foreground/80 uppercase tracking-wider">Cakupan
+                                Analisis</th>
+                            <th class="p-6 text-sm font-semibold text-primary uppercase tracking-wider text-right">Aksi
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 text-sm text-foreground/70">
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-6 font-semibold text-white">Basic</td>
+                            <td class="p-6">Kebutuhan awal penelitian</td>
+                            <td class="p-6">Deskriptif, Uji Validitas, Reliabilitas</td>
+                            <td class="p-6 text-right">
+                                <a href="https://wa.me/628973746300?text=Halo%20kak,%20saya%20tertarik%20dengan%20Paket%20Basic"
+                                    target="_blank" class="text-primary hover:underline font-medium">Pilih Basic →</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-primary/5 hover:bg-primary/10 transition relative">
+                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary shadow-[0_0_10px_#87FB89]"></div>
+                            <td class="p-6 font-semibold text-white flex items-center gap-2">
+                                Standard <span
+                                    class="text-[10px] bg-primary text-primary-fg px-2 py-0.5 rounded-full uppercase font-bold">Populer</span>
+                            </td>
+                            <td class="p-6">Skripsi & Tesis Dasar</td>
+                            <td class="p-6">Prasyarat, Korelasi, T-Test / ANOVA / Chi-Square</td>
+                            <td class="p-6 text-right">
+                                <a href="https://wa.me/628973746300?text=Halo%20kak,%20saya%20tertarik%20dengan%20Paket%20Standard"
+                                    target="_blank"
+                                    class="bg-primary text-primary-fg px-4 py-2 rounded-lg font-bold hover:bg-primary/80 transition">Pilih
+                                    Standard</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-6 font-semibold text-white">Premium</td>
+                            <td class="p-6">Riset Kompleks & Disertasi</td>
+                            <td class="p-6">Regresi, Asumsi Klasik, SEM, Analisis Lanjutan</td>
+                            <td class="p-6 text-right">
+                                <a href="https://wa.me/628973746300?text=Halo%20kak,%20saya%20tertarik%20dengan%20Paket%20Premium"
+                                    target="_blank" class="text-primary hover:underline font-medium">Pilih Premium →</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="custom" class="max-w-7xl mx-auto px-4 py-16 mb-24">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-foreground mb-4 border-l-4 border-primary pl-4">Permintaan Khusus
+                </h2>
+                <p class="text-foreground/60 leading-relaxed mb-6">
+                    Mencari metode di luar paket? Butuh pengolahan *raw data* yang ekstensif atau visualisasi dashboard
+                    khusus? Ceritakan kebutuhan komputasi Anda di sini.
+                </p>
+                <div class="space-y-4">
+                    <div class="liquid-glass p-4">
+                        <h4 class="font-semibold text-white">Bagaimana dengan Kerahasiaan Data?</h4>
+                        <p class="text-sm text-foreground/50 mt-2">Seluruh data yang diolah dijamin 100% privasinya dan
+                            akan dihapus dari server kami setelah *project* disetujui selesai.</p>
+                    </div>
+                    <div class="liquid-glass p-4">
+                        <h4 class="font-semibold text-white">Apakah disediakan sesi penjelasan?</h4>
+                        <p class="text-sm text-foreground/50 mt-2">Tentu, kami menyertakan ringkasan eksekutif dan siap
+                            berdiskusi agar Anda memahami pembacaan *output* statistik.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="liquid-glass p-8">
+                <form id="customForm" class="flex flex-col gap-5">
+                    <div>
+                        <label class="text-xs text-foreground/50 uppercase tracking-wider font-semibold">Nama
+                            Lengkap</label>
+                        <input id="nama" type="text"
+                            class="w-full mt-1 bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition"
+                            placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="text-xs text-foreground/50 uppercase tracking-wider font-semibold">Topik /
+                            Metode</label>
+                        <input id="metode" type="text"
+                            class="w-full mt-1 bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition"
+                            placeholder="Contoh: Analisis Runtun Waktu (Time Series)">
+                    </div>
+                    <div>
+                        <label class="text-xs text-foreground/50 uppercase tracking-wider font-semibold">Detail
+                            Kebutuhan</label>
+                        <textarea id="kebutuhan" rows="4"
+                            class="w-full mt-1 bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition"
+                            placeholder="Jelaskan karakteristik data dan output yang diinginkan..."></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-primary text-primary-fg font-bold py-4 rounded-xl mt-2 hover:bg-primary/90 shadow-[0_0_15px_rgba(135,251,137,0.3)] transition">
+                        Kirim via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 bg-black pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="grid h-10 w-10 place-items-center rounded-lg bg-primary text-primary-fg font-bold text-xl">
+                        D</div>
+                    <span class="text-xl font-bold text-foreground">DATAKU</span>
+                </div>
+                <p class="text-foreground/50 text-sm leading-relaxed max-w-xs">
+                    Layanan pengolahan dan analisis data statistik terdepan. Akurasi tinggi, proses transparan, hasil
+                    memuaskan.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Navigasi</h4>
+                <ul class="space-y-2 text-sm text-foreground/50">
+                    <li><a href="#services" class="hover:text-primary transition">Daftar Analisis</a></li>
+                    <li><a href="#packages" class="hover:text-primary transition">Harga & Paket</a></li>
+                    <li><a href="#custom" class="hover:text-primary transition">Permintaan Khusus</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Kontak</h4>
+                <div class="space-y-2 text-sm text-foreground/50">
+                    <p>WhatsApp: <span class="text-white">+62 897-3746-300</span></p>
+                    <p>Email: <span class="text-white">actstudy.its@gmail.com</span></p>
+                    <p>Waktu Operasional: <span class="text-white">08.00 - 17.00 WIB</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-foreground/30 text-xs border-t border-white/5 pt-8">
+            © 2026 DATAKU. Crafted with data precision.
+        </div>
+    </footer>
+
+    <script>
+        const whatsappNumber = "628973746300";
+
+        // Custom Form Logic
+        document.getElementById("customForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const nama = document.getElementById("nama").value.trim();
+            const metode = document.getElementById("metode").value.trim();
+            const kebutuhan = document.getElementById("kebutuhan").value.trim();
+
+            const message = encodeURIComponent(
+                `Halo Admin DATAKU, saya ${nama || "klien"}. Saya memiliki permintaan khusus untuk olah data:\n\nMetode: ${metode || "-"}\nDetail: ${kebutuhan || "-"}`
+            );
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+        });
+    </script>
+</body>
+
+</html>
